@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: git-ssh-key
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: git@github.com:yer-retb/app_use_argocd.git
+  sshPrivateKey: |
+    -----BEGIN OPENSSH PRIVATE KEY-----
+    b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+    QyNTUxOQAAACBvh+DLB4DaH+eh0T5AkC8GGyvH+J/6moTLNJ3NpZNJbwAAAKCbbdx0m23c
+    dAAAAAtzc2gtZWQyNTUxOQAAACBvh+DLB4DaH+eh0T5AkC8GGyvH+J/6moTLNJ3NpZNJbw
+    AAAEBnwB9CpIp8tJgYmM7DUf2eI28wLNmgoD0QBfdqGp41Z2+H4MsHgNof56HRPkCQLwYb
+    K8f4n/qahMs0nc2lk0lvAAAAGnlvdXNzZWZAeW91c3NlZi1WaXJ0dWFsQm94AQID
+    -----END OPENSSH PRIVATE KEY-----

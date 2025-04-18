@@ -13,18 +13,17 @@ Vagrant.configure("2") do |config|
 		end
 	master.vm.provision "shell", path: "scripts/k3s_master.sh"
 	end
-
-  config.vm.define "yer-retbSW" do |worker|
-    worker.vm.hostname = "yer-retbSW"
-    worker.vm.network "private_network", ip: "192.168.56.111"
-    worker.vm.synced_folder ".", "/vagrant", disabled: false
-    worker.vm.provider "virtualbox" do |v|
-      v.name = "yer-retbSW"
-      v.gui = false
-           v.memory = "1024"
-           v.cpus = 1
-      end
-    worker.vm.provision "shell", path: "scripts/k3s_worker.sh"
-    end 
  
 end
+
+#NAT
+#Network
+#Public Network
+
+
+#VirtualBox: VirtualBox Shared Folders
+#VMware: VMware Shared Folders
+# NFS / SMB /  rsync
+
+#curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="agent --server https://192.168.56.110:6443 --node-ip 192.168.56.111 --token hakkache02" sh -s -
+#curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server --node-ip 192.168.56.110 --write-kubeconfig-mode 0644 --token hakkache02" sh -s -
